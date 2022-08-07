@@ -1,0 +1,101 @@
+.example-card {
+    max-width: 400px;
+    margin: 15px;
+    /* background-color: aliceblue; */
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    text-align: center;
+
+  }
+  .test{
+    background: rgb(5, 123, 62);
+
+}
+
+.wrapper {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+
+}
+
+.published_card{
+  /* background: #02ca98; */
+    padding: 5px;
+    color:rgb(0, 0, 0);
+    text-align: center;
+
+  /* border: 55px solid #000 */
+
+}
+
+
+.expired_card{
+  background: #131313a8;
+  padding: 5px;
+  color:white;
+
+}
+
+.closed_card{
+  background: #f3f4f3a8;
+    padding: 5px;
+    color:white;
+}
+.icon{
+
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+.date{
+  text-align: center
+}
+
+.MatFormStyle{
+  /* background-color: rgb(76, 57, 57); */
+  color: black;
+}
+
+.mat-card:hover {
+  box-shadow: 5px 10px #888888;
+  border-color: #00fa4ba8;
+
+}
+.mat-card:hover .fa-circle-check {
+	color: rgb(17, 255, 0);
+}
+.mat-card:hover .fa-hourglass-empty{
+
+  color: #02ca98;
+}
+
+.fa-solid
+   {
+    display: inline-block;
+    width: 100%;
+    text-align:center;
+  }
+  .fa-circle-check{
+    color:rgb(0, 128, 122);
+  }
+
+  .fa-hourglass-empty{
+    color: black;
+  }
+  .fa-lock
+  {
+    color: black;
+  }
+
+  .selected{
+    border: #104e3f;
+    border-style: groove;
+    border-width: thick;
+    background: #104e3f;
+  }
+.show{
+  background: #888888;
+}

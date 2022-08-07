@@ -1,0 +1,22 @@
+.back-color{
+    background: #00e4dc;
+    /* background: #013231; */
+    /* width: fit-content; */
+    /*
+
+    This is for changing the text's color
+
+    color: rgb(196, 54, 54); */
+}
+
+.mat-tab-label{
+    background:rgb(191, 16, 16);
+    color: rgb(223, 46, 143);
+    width: 60px;
+    height: 50px;
+    font-size: 20px;
+  }
+  .mat-tab-group.mat-primary .mat-ink-bar{
+    background: brown;
+    height: 5px;
+  }

@@ -1,0 +1,146 @@
+<!-- <app-card [test]="currentTest"></app-card> -->
+
+<!-- Buttons for changing the view between grid and list -->
+
+<div [hidden]="fetchService.show_date_picker">
+
+<!-- <mat-form-field appearance="fill" class="date">
+  <mat-label>Enter a date range</mat-label>
+  <mat-date-range-input [rangePicker]="picker" (dateChange)="validate()">
+    <input matStartDate placeholder="Start date" (dateChange)="validate()" [(ngModel)]="fetchService.start_date">
+    <input matEndDate placeholder="End date" (dateChange)="validate()" [(ngModel)]="fetchService.end_date">
+  </mat-date-range-input>
+  <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field> -->
+
+
+<!-- <mat-form-field appearance="fill" class="date">
+  <mat-label>Start Date</mat-label>
+  <input matInput [matDatepicker]="picker" [(ngModel)]="fetchService.start_date">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="date">
+  <mat-label>End Date</mat-label>
+  <input matInput [matDatepicker]="picker" [(ngModel)]="fetchService.end_date">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker2></mat-datepicker>
+</mat-form-field> -->
+
+<mat-form-field appearance="fill" class="date">
+  <mat-label>End Date</mat-label>
+  <input matInput [matDatepicker]="picker1" [(ngModel)]="fetchService.end_date">
+  <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+  <mat-datepicker #picker1></mat-datepicker>
+</mat-form-field>
+
+<mat-form-field appearance="fill" class="date">
+  <mat-label>Start Date</mat-label>
+  <input matInput [matDatepicker]="picker" [(ngModel)]="fetchService.start_date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+
+
+<!-- <button class="button">Apply</button>
+{{fetchService.start_date}}
+{{fetchService.end_date}} -->
+
+</div>
+
+
+
+<p>
+  <mat-button-toggle-group class="toggle">
+    <!-- {{'Grid'| translate}} -->
+    <mat-button-toggle value="Grid" (click)="grid()">{{'Grid'| translate}}</mat-button-toggle>
+    <mat-button-toggle value="List" (click)="list()">{{'List' | translate}}</mat-button-toggle>
+  </mat-button-toggle-group>
+</p>
+<!-- ngFor for fetching the posts, then sending the post to the html -->
+<!-- <div [ngClass]="{grid: class_value=='grid',list:class_value=='list'}"> -->
+
+
+  <!-- Show published Cards -->
+<div *ngIf="fetchService.published_flag">
+  <div *ngIf="class_value=='grid'" [ngClass]="{grid:class_value=='grid'}">
+<app-card [ngClass]="{selected : post.TEMPLATE_ID==currentid && fetchService.flag}"
+(selected_id)="addId(post)"
+  *ngFor="let post of fetchService.published_surveyes |filter:fetchService.Search_name:fetchService.start_date:fetchService.end_date let i = index"
+  [post]=post
+></app-card>
+</div>
+</div>
+
+<!-- Show expired Cards -->
+<div *ngIf="fetchService.expired_flag">
+  <div *ngIf="class_value=='grid'" [ngClass]="{grid:class_value=='grid'}">
+<app-card [ngClass]="{selected : post.TEMPLATE_ID==currentid && fetchService.flag}"
+(selected_id)="addId(post)"
+  *ngFor="let post of fetchService.expired_surveyes |filter:fetchService.Search_name:fetchService.start_date:fetchService.end_date; let i = index"
+  [post]=post
+></app-card>
+</div>
+</div>
+
+<!-- Show closed Cards -->
+<div *ngIf="fetchService.closed_flag">
+  <div *ngIf="class_value=='grid'" [ngClass]="{grid:class_value=='grid'}">
+<app-card [ngClass]="{selected : post.TEMPLATE_ID==currentid && fetchService.flag}"
+(selected_id)="addId(post)"
+  *ngFor="let post of fetchService.closed_surveyes |filter:fetchService.Search_name:fetchService.start_date:fetchService.end_date; let i = index"
+  [post]=post
+></app-card>
+</div>
+</div>
+
+<!-- Show all cards -->
+<div *ngIf="fetchService.all_flag">
+  <div *ngIf="class_value=='grid'" [ngClass]="{grid:class_value=='grid'}">
+<app-card [ngClass]="{selected : post.TEMPLATE_ID==currentid && fetchService.flag}"
+(selected_id)="addId(post)"
+  *ngFor="let post of fetchedPosts |filter:fetchService.Search_name:fetchService.start_date:fetchService.end_date; let i = index"
+  [post]=post
+></app-card>
+</div>
+</div>
+
+
+
+
+  <!-- <div *ngIf="class_value=='grid' && fetchService.status=='Expired'" [ngClass]="{grid:class_value=='grid'}">
+<app-card [ngClass]="{selected : post.TEMPLATE_ID==currentid && fetchService.flag}"
+(selected_id)="addId(post)"
+  *ngFor="let post of fetchedPosts; let i = index"
+  [post]="fetchedPosts[i]"
+></app-card>
+</div>
+  <div *ngIf="class_value=='grid' && fetchService.status=='Closed'" [ngClass]="{grid:class_value=='grid'}">
+<app-card [ngClass]="{selected : post.TEMPLATE_ID==currentid && fetchService.flag}"
+(selected_id)="addId(post)"
+  *ngFor="let post of fetchedPosts; let i = index"
+  [post]="fetchedPosts[i]"
+></app-card>
+</div>
+  <div *ngIf="class_value=='grid' && fetchService.status=='All'" [ngClass]="{grid:class_value=='grid'}">
+<app-card [ngClass]="{selected : post.TEMPLATE_ID==currentid && fetchService.flag}"
+(selected_id)="addId(post)"
+  *ngFor="let post of fetchedPosts; let i = index"
+  [post]="fetchedPosts[i]"
+></app-card>
+</div> -->
+
+
+<!-- Mat table view -->
+<!-- Change to hidden -->
+<div *ngIf="class_value=='list'">
+  <app-data-table></app-data-table>
+</div>
+
+
+

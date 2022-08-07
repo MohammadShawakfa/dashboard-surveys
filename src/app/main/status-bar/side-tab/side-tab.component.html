@@ -1,0 +1,37 @@
+<div class="test">
+    <!-- Go to Dashboard btn
+    Search box
+Filter button -->
+
+<!-- <button class="button" [disabled] =fetchService.disable (click)="onPress()">Go to Dashboard</button> -->
+<button class ="button" [disabled]=fetchService.disable  mat-raised-button (click)="fetchService.Service_onPress()">{{'Go to Dashboard' | translate}}</button>
+
+
+<input type="text" [placeholder]="'Search survey name'|translate" [(ngModel)]="fetchService.Search_name">
+<button class="button" (click)="showDate()">{{'Filter' | translate}}</button>
+</div>
+
+<div [hidden]=false class="date">
+
+
+<!--
+  <mat-form-field class="example-form-field" appearance="fill">
+    <mat-label>First campaign</mat-label>
+    <mat-date-range-input
+      [formGroup]="campaignOne"
+      [rangePicker]="campaignOnePicker"
+      [comparisonStart]="campaignTwo.value.start"
+      [comparisonEnd]="campaignTwo.value.end">
+      <input matStartDate placeholder="Start date" formControlName="start">
+      <input matEndDate placeholder="End date" formControlName="end">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="campaignOnePicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #campaignOnePicker></mat-date-range-picker>
+  </mat-form-field>
+</div> -->
+
+
+
+
+

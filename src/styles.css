@@ -1,1 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+body .mat-tab-label, .mat-tab-link {
+    color: black;
+}
+body .mat-form-field-infix{
+  /* color: yellowgreen; */
+  background-color: transparent;
+}
+/* body .mat-form-field,.mat-dialog-content,.mat-dialog-title,.mat-dialog-actions{
+  color: black;
+  background-color: aliceblue;
+} */
+body .Zeyad .mat-card-header .mat-card-title {
+  font-size: 25px;
+
+}
+
+html:lang(ar) * {
+  text-align: right;
+}
+
+
+
+
+

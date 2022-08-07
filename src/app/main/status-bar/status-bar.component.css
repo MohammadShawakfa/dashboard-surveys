@@ -1,0 +1,8 @@
+.main{
+    /* float: left; */
+    /* To make the divs align horizontally we use display flex*/
+    display: flex;
+    color: white;
+    justify-content: space-between; 
+    /* padding: auto; */    
+}

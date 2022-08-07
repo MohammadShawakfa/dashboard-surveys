@@ -1,0 +1,80 @@
+<!-- Mat Card Template -->
+<!-- changing from post to fetchedFromParent -->
+<!-- Check out ngModel and onFocus/ onBlur -->
+
+<!-- If fetchservice.newName_service is not null, show the updated value -->
+
+<!-- <div [hidden]="card_view"> -->
+
+  <!-- [ngClass]="{grid:class_value=='grid'} -->
+
+  <!-- [ngClass]="{Zeyad:fetchService.Accessible==true}" -->
+
+  <div [ngClass]="{Zeyad:fetchService.Accessible==true}"   >
+    <mat-card
+      class="example-card"
+      (click)="onSelect()"
+    >
+      <mat-card-header
+
+        [ngClass]="{
+          published_card: post.SURVEY_STATUS_EN == 'Published',
+          expired_card: post.SURVEY_STATUS_EN == 'Expired',
+          closed_card: post.SURVEY_STATUS_EN == 'Closed'
+        }"
+      >
+
+
+        <mat-card-title *ngIf="fetchService.newName_service.length >0 && post.TEMPLATE_ID==fetchService.choosenId; else elseBlock">
+          <span #testId2 [hidden]="!myVar"> {{ fetchService.newName_service }} </span>
+        </mat-card-title>
+
+        <ng-template #elseBlock>
+
+          <mat-card-title>
+            <span #testId *ngIf="fetchService.language=='en'"> {{ post.SurveyName }} </span>
+            <span #testId *ngIf="fetchService.language=='ar'"> {{ post.SurveyNameAr }} </span>
+           </mat-card-title>
+
+
+        </ng-template>
+      </mat-card-header>
+      <hr />
+      <mat-card-content>
+
+        <i
+          class="fa-solid fa-circle-check fa-2xl"
+          *ngIf="post.SURVEY_STATUS_EN == 'Published'"
+        ></i>
+
+        <i
+          class="fa-solid fa-hourglass-empty"
+          *ngIf="post.SURVEY_STATUS_EN == 'Expired'"
+        ></i>
+
+        <i class="fa-solid fa-lock" *ngIf="post.SURVEY_STATUS_EN == 'Closed'"></i>
+        <hr />
+
+        <p *ngIf="post.SurveyPeriods.length == 1" class="date">
+          {{ post?.SurveyPeriods[0]?.START_DATE | date: "dd/MM/YYYY" }} -
+          {{ post?.SurveyPeriods[0]?.END_DATE | date: "dd/MM/YYYY" }}
+        </p>
+        <p *ngIf="post.SurveyPeriods.length > 1" class="date">
+          <mat-form-field appearance="fill" class="MatFormStyle">
+            <mat-label>{{'Select Period' | translate}}</mat-label>
+            <mat-select>
+              <mat-option
+                *ngFor="let date of post.SurveyPeriods"
+                [value]="date.START_DATE"
+              >
+                {{ date.START_DATE | date: "dd/MM/YYYY" }} -
+                {{ date.END_DATE | date: "dd/MM/YYYY" }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </p></mat-card-content
+      >
+    </mat-card>
+
+  <!-- </div> -->
+</div>

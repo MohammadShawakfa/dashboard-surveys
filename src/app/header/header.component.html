@@ -1,0 +1,26 @@
+<span class="alternative">
+
+<div class="header" #testId_4>
+
+    <a href="http://www.realsoft-me.com/index.php/en/al-khawarizmi">
+        <img alt="Al-khawarizmi" src="https://drive.google.com/uc?export=view&id=1bk5SrGbGchv3gXWWDLEL24_vOwfYOHPI"
+        > </a>
+    <div class="header-right">
+      <mat-form-field appearance="fill"  class="MatFormStyle">
+        <mat-label>{{'User' | translate}}</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let user of users" value=[user]>
+            {{user}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <a href="#about" (click)="changeLanguage()">    العربية | EN</a>
+
+
+
+
+    </div>
+  </div>
+
+</span>

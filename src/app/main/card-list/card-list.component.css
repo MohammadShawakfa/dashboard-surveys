@@ -1,0 +1,102 @@
+.grid {
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .test{
+    background-color: brown;
+  }
+
+/* Change only the selected card here */
+
+
+.selected{
+  /* border: #104e3f;
+  border-style: groove;
+  border-width: 1px; */
+  background: #cacaca;
+
+}
+
+.list{
+width: auto;
+}
+.toggle{
+
+  float: right;
+}
+
+
+/* Mat table code */
+
+.demo-table {
+  width: 100%;
+}
+
+.mat-row .mat-cell {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  cursor: pointer;
+}
+
+.mat-row:hover .mat-cell {
+  border-color: currentColor;
+}
+
+.demo-row-is-clicked {
+  font-weight: bold;
+}
+
+
+.fa-solid
+   {
+    display: inline-block;
+    width: 100%;
+    text-align:center;
+  }
+  .fa-circle-check{
+    color:rgb(0, 128, 122);
+  }
+
+  .fa-hourglass-empty{
+    color: black;
+  }
+  .fa-lock
+  {
+    color: black;
+  }
+
+  .date{
+
+
+    color: black;
+    /* background-color: rgb(53, 53, 53); */
+    float: right;
+  }
+  .button
+  {
+
+      background-color: #09fe88;
+      float: right;
+      /* border: none; */
+      color: white;
+      /* padding: 15px 32px; */
+      text-align: center;
+      /* text-decoration: none; */
+      /* display: inline-block; */
+      font-size: 16px;
+      border:none;
+      border-radius:10px;
+
+  }
+
+  .button:hover {
+    background-color:#002ead;
+    transition: 0.7s;
+}
+
+
+.button:active {
+  background-color: #000000;
+}

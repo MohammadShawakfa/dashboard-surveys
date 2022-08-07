@@ -1,0 +1,17 @@
+
+<h1 mat-dialog-title>Survey: {{fetchservice?.current_card?.TemplateName}}</h1>
+<div mat-dialog-content>
+  <p>Data to send back</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Data</mat-label>
+    <input matInput [(ngModel)]="test_input_name">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close] ="false">No Thanks</button>
+  <!-- <button mat-button  mat-dialog-close ="true" (click)="fetchservice.update()">Ok</button> -->
+  <button mat-button  [mat-dialog-close]="test_input_name">Ok</button>
+</div>
+
+<!-- //////////////////////////////////////-->
+
