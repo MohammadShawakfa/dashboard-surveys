@@ -72,3 +72,15 @@ TASK #7: ACCESSIBILITY
 TASK #8: INTERNATIONALIZATION AND RTL SUPPORT
 used ngx translate and translated the website with giving the option to toggle between English and Arabic.
 also, the text changes from LTR to RTL depending on the chosen language.
+
+
+
+#NOTE: if you face this error "Error: Type TranslateModule does not have 'ɵmod' property"
+you can try these solutions:
+
+1-npm ci
+2-Add in scripts: {
+    "postinstall": "ngcc"
+}  " Located in (package.json)
+
+*Remember to turn off the server and re-serve the project after making these changes.
