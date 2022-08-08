@@ -39,6 +39,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { PublishedComponent } from './tables/published/published/published.component';
+import { ExpiredComponent } from './tables/expired/expired/expired.component';
+import { AllSurveysTableComponent } from './tables/all  surveys/all-surveys-table/all-surveys-table.component';
 
 
 
@@ -83,6 +86,9 @@ export function HttpLoaderFactory(http:HttpClient)
     DialogComponent,
     DataTableComponent,
     FilterPipe,
+    PublishedComponent,
+    ExpiredComponent,
+    AllSurveysTableComponent,
 
 
 

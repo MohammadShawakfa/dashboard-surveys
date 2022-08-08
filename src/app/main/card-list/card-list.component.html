@@ -139,7 +139,10 @@
 <!-- Mat table view -->
 <!-- Change to hidden -->
 <div *ngIf="class_value=='list'">
-  <app-data-table></app-data-table>
+  <!-- <app-data-table></app-data-table> -->
+  <div [hidden]="!fetchService.published_flag"><app-published></app-published></div>
+  <div [hidden]="!fetchService.expired_flag"><app-expired></app-expired></div>
+  <div [hidden]="!fetchService.all_flag"><app-all-surveys-table></app-all-surveys-table></div>
 </div>
 
 

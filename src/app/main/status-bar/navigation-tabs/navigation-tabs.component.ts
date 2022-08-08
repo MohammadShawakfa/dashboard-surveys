@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild } from '@angular/core';
 import { FetchService } from 'src/app/fetch.service';
 import { Card } from 'src/app/card.model';
 import { MatTabChangeEvent } from '@angular/material/tabs';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+
 
 
 @Component({
@@ -11,6 +14,10 @@ import { MatTabChangeEvent } from '@angular/material/tabs';
 })
 export class NavigationTabsComponent implements OnInit {
   constructor(public fetchService: FetchService) { }
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+
+
 
 
 
@@ -37,7 +44,7 @@ export class NavigationTabsComponent implements OnInit {
         return post.SURVEY_STATUS_EN=='Closed';
       })
 
-      // this.fetchService.all_surveys=this.posts_to_display;
+      this.fetchService.all_surveys=this.posts_to_display;
 
 
 
@@ -78,6 +85,11 @@ export class NavigationTabsComponent implements OnInit {
     this.fetchService.expired_flag=true;
     this.fetchService.closed_flag=false;
     this.fetchService.all_flag=false;
+    // this.fetchService.service_dataSource.data = this.fetchService.expired_surveyes;
+    // this.fetchService.service_dataSource.sort = this.sort;
+    // this.fetchService.service_dataSource.paginator=this.paginator;
+    // this.ExpiredSource.sort = this.sort;
+    // this.ExpiredSource.paginator=this.paginator;
     break;
   case 2:
     this.fetchService.published_flag=false;

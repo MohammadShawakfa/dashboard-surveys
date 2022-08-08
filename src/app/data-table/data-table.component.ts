@@ -70,7 +70,7 @@ export class DataTableComponent implements AfterViewInit {
       this.publishedSource.sort = this.sort;
       console.log(this.sort);
 
-      this.fetchService.service_dataSource=new MatTableDataSource<Card>(posts);
+      // this.fetchService.service_dataSource=new MatTableDataSource<Card>(posts);
 
       this.dataSource.paginator = this.paginator;
       console.log("expired paginator value");

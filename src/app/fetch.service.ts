@@ -13,8 +13,9 @@ export class FetchService implements OnInit {
 
 
   innerArray = [];
-  service_dataSource;
-  srvice_dataSource = new MatTableDataSource<Card>();
+
+  service_dataSource = new MatTableDataSource<Card>();
+
   choosenId=0;
   flag=false;
   update_value=false;
